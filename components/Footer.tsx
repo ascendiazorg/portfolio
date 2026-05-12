@@ -81,9 +81,6 @@ export default function Footer() {
             >
               Email
             </a>
-            <span className="font-sans text-xs text-cream/30">
-              Built with Next.js & Tailwind
-            </span>
           </div>
         </div>
       </div>
