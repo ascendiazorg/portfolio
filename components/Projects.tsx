@@ -62,11 +62,11 @@ export default function Projects() {
         </div>
 
         {/* Grid */}
-        <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-6 items-stretch">
           {filtered.map((project, i) => (
             <div
               key={project.id}
-              className={`transition-all duration-500 ${
+              className={`flex transition-all duration-500 ${
                 visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
               }`}
               style={{ transitionDelay: `${0.3 + i * 0.1}s` }}
