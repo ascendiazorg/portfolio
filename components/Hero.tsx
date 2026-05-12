@@ -55,7 +55,7 @@ export default function Hero() {
       <div className="relative max-w-6xl mx-auto px-6 py-32 w-full">
         <div className="max-w-3xl">
           <p className="font-sans text-xs font-medium tracking-[0.25em] uppercase text-charcoal-muted mb-10 animate-fade-in">
-            Based in Jakarta &mdash; open to remote work
+            Based in Jakarta
           </p>
 
           <h1 className="font-serif text-6xl md:text-7xl lg:text-8xl font-bold text-charcoal leading-none tracking-tight mb-6 animate-slide-up">
