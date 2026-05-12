@@ -7,7 +7,7 @@ export interface Project {
   role: string;
   github: string;
   category: string;
-  website?: string;
+  liveUrl?: string;
   publication?: string;
   icon: string;
 }
@@ -23,6 +23,7 @@ export const projects: Project[] = [
     tech: ["Python", "Machine Learning", "Streamlit"],
     role: "Developer",
     github: "https://github.com/ascendiazorg/health_insurance",
+    liveUrl: "https://github.com/ascendiazorg/health_insurance",
     category: "Machine Learning",
     icon: "🏥",
   },
@@ -36,6 +37,7 @@ export const projects: Project[] = [
     tech: ["R", "Data Visualization", "ggplot2"],
     role: "Data Analyst",
     github: "https://github.com/ascendiazorg/indonesia_visitor_analysis",
+    liveUrl: "https://github.com/ascendiazorg/indonesia_visitor_analysis",
     category: "Data Visualization",
     icon: "🗺️",
   },
@@ -49,6 +51,7 @@ export const projects: Project[] = [
     tech: ["Python", "ARIMA", "Time Series", "Data Science"],
     role: "Data Scientist",
     github: "https://github.com/ascendiazorg/netflix_subscriptions_predict",
+    liveUrl: "https://github.com/ascendiazorg/netflix_subscriptions_predict",
     category: "Data Science",
     icon: "📊",
   },
@@ -62,6 +65,7 @@ export const projects: Project[] = [
     tech: ["HTML", "CSS", "JavaScript"],
     role: "Front-End Developer",
     github: "https://github.com/dwi-putra227/splittr",
+    liveUrl: "https://github.com/dwi-putra227/splittr",
     category: "Web Development",
     icon: "💰",
   },
@@ -75,6 +79,7 @@ export const projects: Project[] = [
     tech: ["Python", "Lasso Regression", "Machine Learning", "Research"],
     role: "Developer & Researcher",
     github: "https://github.com/ascendiazorg/sleep_health_using_lasso_regression",
+    liveUrl: "https://ieeexplore.ieee.org/abstract/document/10780829",
     category: "Research",
     publication:
       "2024 International Conference on Information Management and Technology (ICIMTech)",
