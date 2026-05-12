@@ -47,8 +47,10 @@ export default function Cursor() {
     function loop() {
       ringX += (mouseX - ringX) * 0.12;
       ringY += (mouseY - ringY) * 0.12;
-      ring.style.left = `${ringX}px`;
-      ring.style.top = `${ringY}px`;
+      if (ring) {
+        ring.style.left = `${ringX}px`;
+        ring.style.top = `${ringY}px`;
+      }
       raf = requestAnimationFrame(loop);
     }
 
