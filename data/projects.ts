@@ -71,6 +71,20 @@ export const projects: Project[] = [
   },
   {
     id: 5,
+    title: "Jakarta Air Quality Dashboard",
+    description:
+      "Real-time air quality monitoring dashboard for Jakarta with pollutant breakdown and 7-day trend forecast",
+    longDescription:
+      "An interactive dashboard that displays real-time air quality data for Jakarta, Indonesia. The dashboard shows the current AQI (Air Quality Index) with color-coded status, a breakdown of key pollutants including PM2.5, PM10, O3, NO2, CO, and SO2, and a 7-day historical trend chart. Built with Next.js and Recharts, the data is sourced from the AQICN monitoring network. The interface is fully responsive across mobile and desktop devices.",
+    tech: ["Next.js", "TypeScript", "Recharts", "Tailwind CSS", "AQICN API"],
+    role: "Full-Stack Developer",
+    github: "https://github.com/ascendiazorg/jakarta-air-quality",
+    liveUrl: "https://github.com/ascendiazorg/jakarta-air-quality",
+    category: "Web Development",
+    icon: "🌍",
+  },
+  {
+    id: 6,
     title: "Sleep Health Analysis Using Lasso Regression",
     description:
       "Research paper published at ICIMTech 2024 — analyzing sleep quality from lifestyle data",
