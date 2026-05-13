@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import nodemailer from "nodemailer";
+import { Resend } from "resend";
 
 interface ContactPayload {
   name: string;
@@ -32,31 +32,28 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
     return NextResponse.json({ success: false, message: "Validation failed.", errors }, { status: 422 });
   }
 
-  const smtpUser = process.env.SMTP_USER;
-  const smtpPass = process.env.SMTP_PASS;
-  const toEmail  = process.env.CONTACT_TO_EMAIL ?? smtpUser;
-
-  if (!smtpUser || !smtpPass) {
+  if (!process.env.RESEND_API_KEY) {
     return NextResponse.json({ success: false, message: "Email not configured." }, { status: 500 });
   }
 
-  const transporter = nodemailer.createTransport({
-    service: "gmail",
-    auth: { user: smtpUser, pass: smtpPass },
-  });
+  const resend = new Resend(process.env.RESEND_API_KEY);
 
-  await transporter.sendMail({
-    from: `"Portfolio Contact" <${smtpUser}>`,
-    to: toEmail,
+  const { error } = await resend.emails.send({
+    from: "Portfolio Contact <onboarding@resend.dev>",
+    to: "riupassacendia@gmail.com",
     replyTo: email!.trim(),
     subject: `Portfolio message from ${name!.trim()}`,
-    text: `From: ${name!.trim()} <${email!.trim()}>\n\n${message!.trim()}`,
     html: `
       <p><strong>From:</strong> ${name!.trim()} &lt;${email!.trim()}&gt;</p>
       <p><strong>Message:</strong></p>
       <p>${message!.trim().replace(/\n/g, "<br>")}</p>
     `,
   });
+
+  if (error) {
+    console.error("Resend error:", error);
+    return NextResponse.json({ success: false, message: "Failed to send email." }, { status: 500 });
+  }
 
   return NextResponse.json({ success: true, message: "Message sent." }, { status: 200 });
 }
